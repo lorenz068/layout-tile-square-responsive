@@ -1,0 +1,131 @@
+<html>
+    <style>
+        /* Reset*/
+        body {
+            margin: 0;
+        }
+
+        .clearfix:before,
+        .clearfix:after {
+            content: " ";
+            display: table;
+        }
+        .clearfix:after {
+            clear: both;
+        }
+
+        /* Mosaic Grid with 310px large  */
+
+        .container-tiles {
+            margin: auto;
+            width: calc(310px * 6);
+        }
+
+        /* Set breakpoint by multiple of tiles for centering content*/
+        @media (max-width: 1880px) {
+            .container-tiles {
+                width: calc(310px * 5);
+            }
+        }
+
+        @media (max-width: 1570px) {
+            .container-tiles {
+                width: calc(310px * 4);
+            }
+        }
+
+        @media (max-width: 1260px) {
+            .container-tiles {
+                width: calc(310px * 3);
+            }
+        }
+
+        @media (max-width: 960px) {
+            .container-tiles {
+                width: inherit;
+            }
+        }
+
+        .tiles {
+            float: left;
+            width: calc(100% - 310px);
+        }
+        .tile-column-aside {
+            float: left;
+            height: 600px;
+            width: 290px;
+            margin: 10px;
+            background: pink;
+        }
+
+        @media (max-width: 960px) {
+            .tile-column-aside,
+            .tiles {
+                float: none;
+                margin: auto;
+            }
+            
+            .tiles {
+                width: calc(310px * 2);
+            }
+        }
+
+        @media (max-width: 650px) {
+            tile-column-aside,
+            .tiles {
+                width: 310px;
+            }
+        }
+
+        .tile {
+            float: left;
+            width: 290px;
+            height: 290px;
+            margin: 10px;
+            background: #999;
+        }
+
+        .tile--colmax-2 {
+            width: calc(290px * 2 + 20px);
+        }
+
+        @media (max-width: 650px) {
+            .tile--colmax-2 {
+                width: 290px;
+            }
+        }
+
+        .tile--colmax-3 {
+            width: calc(290px * 3 + 2 * 20px);
+        }
+        
+        @media (max-width: 960px) {
+            .tile--colmax-3 {
+                width: calc(290px * 2 + 20px);
+            }
+        }
+        
+        @media (max-width: 650px) {
+            .tile--colmax-3 {
+                width: 290px;
+            }
+        }
+
+    </style>
+    <body>
+        <div class="container-tiles clearfix">
+            <div class="tiles clearfix">
+                <div class="tile tile--colmax-2"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile tile--colmax-3"></div>
+            </div>
+            <div class="tile-column-aside"></div>
+        </div>
+    </body>
+</html>
